@@ -1,0 +1,25 @@
+{
+  "name": "peculiar-ui",
+  "version": "1.0.0",
+  "authors": [
+    "Johnny Copperstone <jonnce@gmail.com>"
+  ],
+  "description": "Documentation UI built with Angular",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "ui",
+    "documentation",
+    "peculiar"
+  ],
+  "license": "MIT",
+  "homepage": "peculiar.io",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
