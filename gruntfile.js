@@ -4,7 +4,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-stylus');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-angular-builder');
 
     grunt.initConfig({
 
@@ -13,42 +13,43 @@ module.exports = function(grunt) {
         stylus: {
           compile: {
             files: {
-              'build/<%= pkg.name %>-<%= pkg.version %>.css': 'src/styl/peculiar.styl'
+              'build/peculiar.css': 'src/styl/peculiar.styl'
             }
           }
         },
 
-        concat: {
+        'angular-builder': {
           options: {
-            sourceMap: true,
-            sourceMapName: 'build/sourcemap.map'
+            mainModule: 'peculiar',
+            externalModules: 'hljs'
           },
-          dist: {
-            src: ['src/peculiar/**/**/*.js'],
-            dest: 'build/<%= pkg.name %>-<%= pkg.version %>.js'
+          app: {
+            src:  'src/peculiar/**/**/*.js',
+            dest: 'build/peculiar.js'
           }
         },
 
         uglify: {
           minimise: {
             files: {
-              'build/<%= pkg.name %>-<%= pkg.version %>.min.js':
-              ['build/<%= pkg.name %>-<%= pkg.version %>.js']
+              'build/peculiar.min.js':
+              ['build/peculiar.js']
             }
           }
         },
 
         watch: {
           stylus: {
-            files: ['src/styl/*.styl', 'src/peculiar/**/**/*.styl'],
+            files: ['src/styl/*.styl', 'src/peculiar/**/**/**/*.styl'],
             tasks: ['stylus']
           },
-          concat: {
+          'angular-builder': {
             files: ['src/peculiar/**/**/*.js'],
-            tasks: ['concat']
+            tasks: ['angular-builder']
           }
         }
     });
 
     grunt.registerTask('default', ['watch']);
+    grunt.registerTask('build', ['stylus', 'angular-builder', 'uglify']);
 };

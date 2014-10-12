@@ -1,0 +1,44 @@
+.pu-section {
+
+  width: 100%;
+  margin: 0 0 20px 0;
+
+  .pu-section-block {
+
+    border-left: 1px solid $grey-medium;
+    border-right: 1px solid $grey-medium;
+    border-bottom: 1px solid $grey-medium;
+    overflow: hidden;
+
+    &:only-child {
+
+      border-radius: 4px!important;
+    }
+
+    &:first-child {
+
+      border-radius: 4px 4px 0 0;
+      border-top: 1px solid $grey-medium;
+    }
+
+    &:last-child {
+
+      border-radius: 0 0 4px 4px;
+      border-bottom: 2px solid $grey-medium;
+    }
+  }
+
+  .pu-section-title {
+
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    border-radius: 4px 4px 0 0;
+    border: 1px solid $peculiar-dark!important;
+    border-bottom: 1px solid #000;
+    background: $peculiar-dark;
+
+    @extend .type;
+    color: #fff;
+  }
+}

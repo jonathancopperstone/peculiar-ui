@@ -1,1 +1,0 @@
-{"version":3,"sources":["../src/peculiar/peculiar.js"],"names":[],"mappings":"AAAA,CAAC,QAAQ;AAAA,GACN,GAAG,CAAC,MAAM;AAAA;AAAA,EAEX,OAAO,CAAC,MAAM,EAAE,QAAQ;AAAA;AAAA","file":"peculiar-ui-1.0.0.js","sourcesContent":["(function() {\n  'use strict';\n\n  angular.module('peculiar', []);\n\n}());\n"]}

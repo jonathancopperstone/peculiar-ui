@@ -1,0 +1,40 @@
+.pu-section {
+
+  .pu-section-table {
+
+    width: 100%;
+    background: $peculiar-light;
+    border-bottom: none;
+
+    .pu-table {
+
+      width: 100%;
+      border-spacing: 0;
+
+      .pu-row {
+
+        .pu-cell {
+
+          padding: 10px;
+          border-right: 1px solid $grey-medium;
+          border-bottom: 1px solid $grey-medium;
+          @extend .type;
+
+          &:last-child {
+
+            border-right: none;
+          }
+        }
+
+        &:first-child {
+
+          .pu-cell {
+
+            text-transform: capitalize;
+            @extend .font-bold;
+          }
+        }
+      }
+    }
+  }
+}

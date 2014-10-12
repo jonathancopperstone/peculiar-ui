@@ -2,13 +2,137 @@
 <html ng-app="peculiar">
 <head>
   <title>Peculiar UI</title>
-  <link href="build/peculiar-ui-1.0.0.css" />
+
+  <link rel="stylesheet" href="build/peculiar.css" />
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="bower_components/highlightjs/styles/googlecode.css" />
+
   <script src="bower_components/angular/angular.min.js"></script>
-  <script src="build/peculiar-ui-1.0.0.js"></script>
+  <script src="bower_components/highlightjs/highlight.pack.js"></script>
+  <script src="bower_components/angular-highlightjs/angular-highlightjs.min.js"></script>
+  <script src="bower_components/lodash/dist/lodash.min.js"></script>
+  <script src="build/peculiar.js"></script>
+
 </head>
 <body>
 
-  
+  <div class="pu-wrap">
+
+    <nav class="pu-nav">
+      <ul class="pu-nav-block">
+        <li class="pu-nav-item-head">Peculiar UI</li>
+        <li class="pu-nav-item"><a href="palette">Palette</a></li>
+        <li class="pu-nav-item"><a href="palette">Scaffolding</a></li>
+        <li class="pu-nav-item">
+          <a href="palette">Navigation</a>
+          <ul class="pu-sub-nav-block">
+            <li><a href="">Nav Block</a></li>
+            <li><a href="">Nav Item</a></li>
+            <li><a href="">Nav Block</a></li>
+            <li><a href="">Nav Item</a></li>
+            <li><a href="">Nav Block</a></li>
+            <li><a href="">Nav Item</a></li>
+          </ul>
+        </li>
+    </nav>
+
+    <div class="pu-content">
+
+      <pu-header title="Johnny">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a >>type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of >>Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      </pu-header>
+
+      <pu-section title="Peculiar">
+
+        <pu-text>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a >>type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of >>Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </pu-text>
+
+        <pu-table>
+
+            purow: name // type // options // desc
+            purow: container-type // string // - //
+
+                  Helloooooooo, is it me you're looking for.
+                  I can see it in your eyes. I can see it your
+                  smileeeeee.
+
+        </pu-table>
+
+        <pu-display>
+
+            <ul class="pu-nav-block">
+              <li class="pu-nav-item-head">Peculiar UI</li>
+              <li class="pu-nav-item"><a href="palette">Palette</a></li>
+              <li class="pu-nav-item"><a href="palette">Scaffolding</a></li>
+              <li class="pu-nav-item">
+                <a href="palette">Navigation</a>
+                <ul class="pu-sub-nav-block">
+                  <li><a href="">Nav Block</a></li>
+                  <li><a href="">Nav Item</a></li>
+                  <li><a href="">Nav Block</a></li>
+                  <li><a href="">Nav Item</a></li>
+                  <li><a href="">Nav Block</a></li>
+                  <li><a href="">Nav Item</a></li>
+                </ul>
+              </li>
+            </ul>
+
+        </pu-display>
+
+        <pu-code hljs>
+            <pu-section title="Title">
+              <pu-text>
+                Ma text;
+              </pu-text>
+            </pu-section>
+        </pu-code>
+
+        <pu-display>
+
+            <ul class="pu-nav-block">
+              <li class="pu-nav-item-head">Peculiar UI</li>
+              <li class="pu-nav-item"><a href="palette">Palette</a></li>
+              <li class="pu-nav-item"><a href="palette">Scaffolding</a></li>
+              <li class="pu-nav-item">
+                <a href="palette">Navigation</a>
+                <ul class="pu-sub-nav-block">
+                  <li><a href="">Nav Block</a></li>
+                  <li><a href="">Nav Item</a></li>
+                  <li><a href="">Nav Block</a></li>
+                  <li><a href="">Nav Item</a></li>
+                  <li><a href="">Nav Block</a></li>
+                  <li><a href="">Nav Item</a></li>
+                </ul>
+              </li>
+            </ul>
+
+        </pu-display>
+
+        <pu-code hljs>
+            <ul class="pu-nav-block">
+              <li class="pu-nav-item-head">Peculiar UI</li>
+              <li class="pu-nav-item"><a href="palette">Palette</a></li>
+              <li class="pu-nav-item"><a href="palette">Scaffolding</a></li>
+              <li class="pu-nav-item">
+                <a href="palette">Navigation</a>
+                <ul class="pu-sub-nav-block">
+                  <li><a href="">Nav Block</a></li>
+                  <li><a href="">Nav Item</a></li>
+                  <li><a href="">Nav Block</a></li>
+                  <li><a href="">Nav Item</a></li>
+                  <li><a href="">Nav Block</a></li>
+                  <li><a href="">Nav Item</a></li>
+                </ul>
+              </li>
+            </ul>
+        </pu-code>
+
+      </pu-section>
+
+    </div>
+
+  </div>
 
 </body>
 </html>

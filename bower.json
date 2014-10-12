@@ -1,25 +1,32 @@
 {
   "name": "peculiar-ui",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "authors": [
     "Johnny Copperstone <jonnce@gmail.com>"
   ],
-  "description": "Documentation UI built with Angular",
-  "moduleType": [
-    "amd"
-  ],
+  "main": ["build/peculiar.css", "build/peculiar.js"],
+  "description": "User Interface Documentation Libary built using AngularJS.",
   "keywords": [
     "ui",
+    "user interface",
+    "angular",
     "documentation",
     "peculiar"
   ],
   "license": "MIT",
-  "homepage": "peculiar.io",
+  "homepage": "johnnycopperstone.github.io/peculiar.io",
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
-    "test",
-    "tests"
-  ]
+    "docs",
+    "src",
+    "gruntfile.js",
+    "index.html",
+    "package.json"
+  ],
+  "angular": ">1.2.25",
+  "highlightjs": "8.0.0",
+  "angular-highlightjs": "0.3.0",
+  "lodash": "2.4.1"
 }
