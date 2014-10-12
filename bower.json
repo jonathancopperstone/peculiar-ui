@@ -5,7 +5,7 @@
     "Johnny Copperstone <jonnce@gmail.com>"
   ],
   "main": ["build/peculiar.css", "build/peculiar.js"],
-  "description": "User Interface Documentation Libary built using AngularJS.",
+  "description": "User Interface Documentation Library built using AngularJS.",
   "keywords": [
     "ui",
     "user interface",
