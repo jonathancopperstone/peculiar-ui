@@ -32,7 +32,8 @@ module.exports = function(grunt) {
 
         concat: {
           options: {
-            sourceMap: true
+            sourceMap: true,
+            sourceMapName: 'build/peculiar.source.map'
           },
           dist: {
 

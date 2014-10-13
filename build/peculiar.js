@@ -47,4 +47,4 @@ angular.module('peculiar.templates', []).run(['$templateCache', function($templa
 
 }());
 
-//# sourceMappingURL=..\peculiar-source
+//# sourceMappingURL=peculiar.source.map
