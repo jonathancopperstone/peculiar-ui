@@ -21,6 +21,8 @@
     "bower_components",
     "docs",
     "src",
+    "tests",
+    "karma.conf.js",
     "gruntfile.js",
     "index.html",
     "package.json"

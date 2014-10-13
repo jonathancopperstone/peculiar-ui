@@ -41,21 +41,21 @@ module.exports = function(grunt) {
             // are no reliable grunt plugins
             // to manage angular dependencies,
             // and I do not want to manipulate
-            // naming to reflect this order
+            // naming to reflect order
 
             src:  [
                     'src/tpls/templates.js',
-                    'src/parser/parser.js',
-                    'src/parser/svcs/delimiters.svc.js',
-                    'src/parser/svcs/parser.svc.js',
-                    'src/header/header.js',
-                    'src/header/dirs/header.dir.js',
-                    'src/section/section.js',
-                    'src/section/dirs/code.dir.js',
-                    'src/section/dirs/display.dir.js',
-                    'src/section/dirs/section.dir.js',
-                    'src/section/dirs/table.dir.js',
-                    'src/section/dirs/text.dir.js',
+                    'src/peculiar/parser/parser.js',
+                    'src/peculiar/parser/svcs/delimiters.svc.js',
+                    'src/peculiar/parser/svcs/parser.svc.js',
+                    'src/peculiar/header/header.js',
+                    'src/peculiar/header/dirs/header.dir.js',
+                    'src/peculiar/section/section.js',
+                    'src/peculiar/section/dirs/code.dir.js',
+                    'src/peculiar/section/dirs/display.dir.js',
+                    'src/peculiar/section/dirs/section.dir.js',
+                    'src/peculiar/section/dirs/table.dir.js',
+                    'src/peculiar/section/dirs/text.dir.js',
                     'src/peculiar/peculiar.js'
                   ]
             ,
