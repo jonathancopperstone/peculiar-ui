@@ -4,7 +4,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-stylus');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-angular-builder');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-html2js');
 
     grunt.initConfig({
 
@@ -18,13 +19,45 @@ module.exports = function(grunt) {
           }
         },
 
-        'angular-builder': {
+        html2js: {
           options: {
-            mainModule: 'peculiar',
-            externalModules: 'hljs'
+            module: 'peculiar.templates',
+            singleModule: true
           },
-          app: {
-            src:  'src/peculiar/**/**/*.js',
+          dist: {
+            src: ['src/peculiar/**/**/*.tpl.html'],
+            dest: 'src/tpls/templates.js'
+          }
+        },
+
+        concat: {
+          options: {
+            sourceMap: true
+          },
+          dist: {
+
+            // Done manually for now as there
+            // are no reliable grunt plugins
+            // to manage angular dependencies,
+            // and I do not want to manipulate
+            // naming to reflect this order
+
+            src:  [
+                    'src/tpls/templates.js',
+                    'src/parser/parser.js',
+                    'src/parser/svcs/delimiters.svc.js',
+                    'src/parser/svcs/parser.svc.js',
+                    'src/header/header.js',
+                    'src/header/dirs/header.dir.js',
+                    'src/section/section.js',
+                    'src/section/dirs/code.dir.js',
+                    'src/section/dirs/display.dir.js',
+                    'src/section/dirs/section.dir.js',
+                    'src/section/dirs/table.dir.js',
+                    'src/section/dirs/text.dir.js',
+                    'src/peculiar/peculiar.js'
+                  ]
+            ,
             dest: 'build/peculiar.js'
           }
         },
@@ -43,13 +76,19 @@ module.exports = function(grunt) {
             files: ['src/styl/*.styl', 'src/peculiar/**/**/**/*.styl'],
             tasks: ['stylus']
           },
-          'angular-builder': {
+          concat: {
             files: ['src/peculiar/**/**/*.js'],
-            tasks: ['angular-builder']
+            tasks: ['concat']
           }
         }
+
     });
 
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('build', ['stylus', 'angular-builder', 'uglify']);
+    grunt.registerTask('build', [
+      'stylus',
+      'html2js',
+      'concat',
+      'uglify'
+    ]);
 };

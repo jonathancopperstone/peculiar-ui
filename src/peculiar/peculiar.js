@@ -5,6 +5,7 @@
 
     // Peculiar modules
 
+    'peculiar.templates',
     'peculiar.parser',
     'peculiar.header',
     'peculiar.section',
