@@ -1,9 +1,7 @@
-peculiar-ui
+peculiar-ui [![Build Status](https://travis-ci.org/johnnycopperstone/peculiar-ui.svg?branch=master)](https://travis-ci.org/johnnycopperstone/peculiar-ui)
 ===========
 
-[](User Interface Documentation Library built using AngularJS.)
-
-https://travis-ci.org/johnnycopperstone/peculiar-ui.svg?branch=master
+User Interface Documentation Library built using AngularJS.
 
 ###FYI
 
