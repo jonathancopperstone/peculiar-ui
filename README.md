@@ -1,7 +1,7 @@
 peculiar-ui
 ===========
 
-User Interface Documentation Library built using AngularJS.
+[](User Interface Documentation Library built using AngularJS.)
 
 https://travis-ci.org/johnnycopperstone/peculiar-ui.svg?branch=master
 
