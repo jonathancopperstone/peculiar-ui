@@ -3,6 +3,8 @@ peculiar-ui
 
 User Interface Documentation Library built using AngularJS.
 
+https://travis-ci.org/johnnycopperstone/peculiar-ui.svg?branch=master
+
 ###FYI
 
 I'm still in the process of releasing this, and have pushed it up to github so I can work from different machines. Should only be a few days.
