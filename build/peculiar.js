@@ -83,7 +83,7 @@ angular.module('peculiar.templates', []).run(['$templateCache', function($templa
             // so, append to elem.
 
             if (paragraph.trim()) {
-              htmlWithParagraphs += '<p>' + paragraph + '</p>';
+              htmlWithParagraphs += '<p>' + paragraph.trim() + '</p>';
             }
 
           });
@@ -104,9 +104,10 @@ angular.module('peculiar.templates', []).run(['$templateCache', function($templa
           // and construct the table rows
 
           var tableData = [],
+              totalCellsInRow = 0,
               rows = text.split(delimiterService.row);
 
-          _.each(rows, function(row) {
+          _.each(rows, function(row, index) {
 
             // If we have a valid row value
             // we can now further parse this
@@ -115,6 +116,26 @@ angular.module('peculiar.templates', []).run(['$templateCache', function($templa
             if (row.trim()) {
 
               var cells = row.split(delimiterService.cell);
+
+              // If it's the first row,
+              // then we take that as the
+              // definition for the number
+              // of cells in a row
+
+              if (index === 1) {
+                totalCellsInRow = cells.length;
+              }
+
+              // Otherwise, make sure that all
+              // following rows have the same
+              // number of cells (add empty ones
+              // if necessary)
+              
+              else {
+                for (var i = 0; i < totalCellsInRow - cells.length; i++) {
+                  cells.push('-');
+                }
+              }
 
               // We need to clean up each cell
               // text with a trim
@@ -127,6 +148,17 @@ angular.module('peculiar.templates', []).run(['$templateCache', function($templa
             }
 
           });
+
+          // If only 1 row
+          // or no valid data was provided
+          // then return empty row.
+          // The first row is assumed to
+          // be the table header, so just
+          // 1 row is an invalid table
+
+          if (tableData.length < 2) {
+            tableData = [];
+          }
 
           return tableData;
         };
