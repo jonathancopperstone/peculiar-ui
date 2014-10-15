@@ -63,3 +63,15 @@ grunt build
 ```
 
 Runs: `stylus`, `html2js`, `karma`, `jshint:beforeconcat`, `concat`, `jshint:afterconcat`, `uglify`
+
+####List of all available commands
+
+```shell
+grunt stylus
+grunt html2js
+grunt karma
+grunt jshint (beforeconcat/afterconcat)
+grunt uglify
+grunt watch
+grunt build
+```
