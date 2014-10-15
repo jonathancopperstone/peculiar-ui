@@ -23,7 +23,7 @@ bower install peculiar
 
 This library has a number of dependencies you'd also need to add when including the scripts in your markup.
 
-For CSS, it requires the `peculiar-ui` styles, the default highlight-js theme - feel free to replace this with any other hightlight-js theme, however this was used to tie in with the peculiar style - and the Google Font used.
+For CSS, it requires the `peculiar-ui` styles, the default highlight-js theme (feel free to replace this with any other hightlight-js theme, however this was used to tie in with the peculiar style - pun not intended) and the Google Font used.
 
 ```html
 <link rel="stylesheet" href="bower_components/peculiar/build/peculiar-ui.css" />
@@ -62,4 +62,4 @@ Watches a change to `.js` and `.styl` and runs `grunt concat` and `grunt stylus`
 grunt build
 ```
 
-Runs: `stylus`, `html2js`, `karma`, `jshint:beforeconcat`, `concat`, `jshint:afterconcat`, `uglify` 
+Runs: `stylus`, `html2js`, `karma`, `jshint:beforeconcat`, `concat`, `jshint:afterconcat`, `uglify`
