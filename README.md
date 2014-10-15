@@ -55,8 +55,6 @@ and add the app to your DOM
 <html ng-app='your-app'>
 ```
 
-Otherwise, you will need to create an app. You can either create one and add `peculiar` as a dependency, as in the previous example, or just
-
 ##Working on this Library
 
 If you'd like to contribute or modify this library for your own needs, make sure you've got node, grunt-cli and bower installed.
