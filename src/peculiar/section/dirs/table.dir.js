@@ -1,5 +1,5 @@
 (function(){
-  'use strict'
+  'use strict';
 
   angular.module('peculiar.section').directive('puTable', [
     'peculiar.parser.parserService',
@@ -15,6 +15,6 @@
           scope.data = parserService.parseTable(elem.text());
 
         }
-      }
+      };
   }]);
 }());

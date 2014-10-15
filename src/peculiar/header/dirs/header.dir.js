@@ -1,5 +1,5 @@
 (function(){
-  'use strict'
+  'use strict';
 
   angular.module('peculiar.header').directive('puHeader', [
     'peculiar.parser.parserService',

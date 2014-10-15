@@ -111,6 +111,11 @@ module.exports = function(grunt) {
           }
         },
 
+        jshint: {
+          beforeconcat: ['src/peculiar/**/*.js'],
+          afterconcat: ['build/peculiar.js']
+        },
+
         watch: {
           stylus: {
             files: ['src/styl/*.styl', 'src/peculiar/**/**/**/*.styl'],
@@ -125,5 +130,5 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('build', ['stylus', 'html2js', 'karma', 'concat', 'uglify']);
+    grunt.registerTask('build', ['stylus', 'html2js', 'karma', 'jshint:beforeconcat', 'concat', 'jshint:afterconcat', 'uglify']);
 };

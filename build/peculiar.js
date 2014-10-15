@@ -175,7 +175,7 @@ angular.module('peculiar.templates', []).run(['$templateCache', function($templa
 }());
 
 (function(){
-  'use strict'
+  'use strict';
 
   angular.module('peculiar.header').directive('puHeader', [
     'peculiar.parser.parserService',
@@ -211,7 +211,7 @@ angular.module('peculiar.templates', []).run(['$templateCache', function($templa
 }());
 
 (function(){
-  'use strict'
+  'use strict';
 
   angular.module('peculiar.section').directive('puCode', function() {
     return {
@@ -219,13 +219,13 @@ angular.module('peculiar.templates', []).run(['$templateCache', function($templa
       replace: true,
       transclude: true,
       templateUrl: 'src/peculiar/section/tpls/code.tpl.html'
-    }
+    };
   });
 
 }());
 
 (function(){
-  'use strict'
+  'use strict';
 
   angular.module('peculiar.section').directive('puDisplay', function() {
     return {
@@ -233,13 +233,13 @@ angular.module('peculiar.templates', []).run(['$templateCache', function($templa
       replace: true,
       transclude: true,
       templateUrl: 'src/peculiar/section/tpls/display.tpl.html'
-    }
+    };
   });
 
 }());
 
 (function(){
-  'use strict'
+  'use strict';
 
   angular.module('peculiar.section').directive('puSection', function() {
     return {
@@ -262,7 +262,7 @@ angular.module('peculiar.templates', []).run(['$templateCache', function($templa
 }());
 
 (function(){
-  'use strict'
+  'use strict';
 
   angular.module('peculiar.section').directive('puTable', [
     'peculiar.parser.parserService',
@@ -278,12 +278,12 @@ angular.module('peculiar.templates', []).run(['$templateCache', function($templa
           scope.data = parserService.parseTable(elem.text());
 
         }
-      }
+      };
   }]);
 }());
 
 (function(){
-  'use strict'
+  'use strict';
 
   angular.module('peculiar.section').directive('puText', [
     'peculiar.parser.parserService',
