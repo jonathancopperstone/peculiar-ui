@@ -11,7 +11,9 @@ Naming is the worst. So to solve this problem, at the time of deciding what to n
 
 ##Why This Library?
 
-I'll be writing a blog post about this in the coming days, but the tl;dr version is I wanted a tool to quickly and easily document a user interface.
+I'll be writing a blog post about this in the coming days, but the tl;dr version is I wanted a tool to quickly and easily document a user interface neatly, and not worry about the documentation site styles and the user interface styles interfering with each other.
+
+Documentation for internal use is usually a low priority, and involves quite a lot of work. So this tool can greatly speed up the process, as well as being maintainable.
 
 ##Using the Library
 
@@ -40,6 +42,20 @@ The scripts required:
 <script src="bower_components/lodash/dist/lodash.min.js"></script>
 <script src="bower_components/peculiar/build/peculiar.js"></script>
 ```
+
+To load this tool into your page, you then need to add `peculiar` as a dependency of your angular app. If you don't have an angular app, then just create one:
+
+```javascript
+angular.module('your-app', ['peculiar'])
+```
+
+and add the app to your DOM
+
+```html
+<html ng-app='your-app'>
+```
+
+Otherwise, you will need to create an app. You can either create one and add `peculiar` as a dependency, as in the previous example, or just
 
 ##Working on this Library
 
