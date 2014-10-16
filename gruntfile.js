@@ -22,6 +22,7 @@ module.exports = function(grunt) {
 
         html2js: {
           options: {
+            base: '',
             module: 'peculiar.templates',
             singleModule: true
           },
