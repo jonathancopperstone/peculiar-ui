@@ -6,7 +6,10 @@ angular.module('peculiar.templates', []).run(['$templateCache', function($templa
     "<div class=\"pu-section-block pu-section-code\" data-ng-transclude></div>\n" +
     "");
   $templateCache.put("src/peculiar/section/tpls/display.tpl.html",
-    "<div class=\"pu-section-block pu-section-display\" data-ng-transclude></div>\n" +
+    "<div class=\"pu-section-block pu-section-display\">\n" +
+    "  <label class=\"pu-section-display-label\">{{ displayLabel }}</label>\n" +
+    "  <div class=\"pu-section-display-window\" data-ng-transclude></div>\n" +
+    "</div>\n" +
     "");
   $templateCache.put("src/peculiar/section/tpls/section.tpl.html",
     "<section class=\"pu-section\" data-ng-transclude>\n" +
@@ -14,12 +17,13 @@ angular.module('peculiar.templates', []).run(['$templateCache', function($templa
     "");
   $templateCache.put("src/peculiar/section/tpls/table.tpl.html",
     "<div class=\"pu-section-block pu-section-table\">\n" +
-    "  <div style=\"display:none;\" data-ng-transclude></div>\n" +
+    "\n" +
     "  <table class=\"pu-table\" data-ng-if=\"data\">\n" +
-    "    <tr class=\"pu-row\" data-ng-repeat=\"row in data\">\n" +
-    "      <td class=\"pu-cell\" data-ng-repeat=\"cell in row\"> {{ cell }} </td>\n" +
+    "    <tr class=\"pu-row\" data-ng-repeat=\"row in data track by $index\">\n" +
+    "      <td class=\"pu-cell\" data-ng-repeat=\"cell in row track by $index\"> {{ cell }} </td>\n" +
     "    </tr>\n" +
     "  </table>\n" +
+    "  <div style=\"display:none;\" data-ng-transclude></div>\n" +
     "</div>\n" +
     "");
   $templateCache.put("src/peculiar/section/tpls/text.tpl.html",
@@ -130,7 +134,7 @@ angular.module('peculiar.templates', []).run(['$templateCache', function($templa
               // following rows have the same
               // number of cells (add empty ones
               // if necessary)
-              
+
               else {
                 for (var i = 0; i < totalCellsInRow - cells.length; i++) {
                   cells.push('-');
@@ -232,7 +236,15 @@ angular.module('peculiar.templates', []).run(['$templateCache', function($templa
       restrict: 'E',
       replace: true,
       transclude: true,
-      templateUrl: 'src/peculiar/section/tpls/display.tpl.html'
+      templateUrl: 'src/peculiar/section/tpls/display.tpl.html',
+      link: function(scope, elem, attrs) {
+
+        var displayLabel = angular.isDefined(attrs.label) ? attrs.label : false;
+
+        if (displayLabel) {
+          scope.displayLabel = displayLabel;
+        }
+      }
     };
   });
 

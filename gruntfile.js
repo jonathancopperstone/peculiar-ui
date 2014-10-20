@@ -27,7 +27,7 @@ module.exports = function(grunt) {
             singleModule: true
           },
           dist: {
-            src: ['src/peculiar/**/**/*.tpl.html'],
+            src: ['src/peculiar/**/*.tpl.html'],
             dest: 'src/tpls/templates.js'
           }
         },
@@ -119,11 +119,11 @@ module.exports = function(grunt) {
 
         watch: {
           stylus: {
-            files: ['src/styl/*.styl', 'src/peculiar/**/**/**/*.styl'],
+            files: ['src/styl/*.styl', 'src/peculiar/**/*.styl'],
             tasks: ['stylus']
           },
           concat: {
-            files: ['src/peculiar/**/**/*.js'],
+            files: ['src/peculiar/**/*.js', 'src/peculiar/**/*.html'],
             tasks: ['concat']
           }
         }

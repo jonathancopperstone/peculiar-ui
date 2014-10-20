@@ -79,7 +79,7 @@
               // following rows have the same
               // number of cells (add empty ones
               // if necessary)
-              
+
               else {
                 for (var i = 0; i < totalCellsInRow - cells.length; i++) {
                   cells.push('-');
