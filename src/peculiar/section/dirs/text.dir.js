@@ -1,5 +1,5 @@
 (function(){
-  'use strict'
+  'use strict';
 
   angular.module('peculiar.section').directive('puText', [
     'peculiar.parser.parserService',

@@ -21,12 +21,17 @@
     "bower_components",
     "docs",
     "src",
+    "tests",
+    "karma.conf.js",
     "gruntfile.js",
     "index.html",
     "package.json"
   ],
-  "angular": ">1.2.25",
-  "highlightjs": "8.0.0",
-  "angular-highlightjs": "0.3.0",
-  "lodash": "2.4.1"
+  "devDependencies": {
+    "angular": ">1.2.25",
+    "angular-mocks": "*",
+    "highlightjs": "8.0.0",
+    "angular-highlightjs": "0.3.0",
+    "lodash": "2.4.1"
+  }
 }

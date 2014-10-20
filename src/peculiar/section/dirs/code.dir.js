@@ -1,5 +1,5 @@
 (function(){
-  'use strict'
+  'use strict';
 
   angular.module('peculiar.section').directive('puCode', function() {
     return {
@@ -7,7 +7,7 @@
       replace: true,
       transclude: true,
       templateUrl: 'src/peculiar/section/tpls/code.tpl.html'
-    }
+    };
   });
 
 }());

@@ -6,6 +6,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-html2js');
+    grunt.loadNpmTasks('grunt-karma');
 
     grunt.initConfig({
 
@@ -21,6 +22,7 @@ module.exports = function(grunt) {
 
         html2js: {
           options: {
+            base: '',
             module: 'peculiar.templates',
             singleModule: true
           },
@@ -32,7 +34,8 @@ module.exports = function(grunt) {
 
         concat: {
           options: {
-            sourceMap: true
+            sourceMap: true,
+            sourceMapName: 'build/peculiar.source.map'
           },
           dist: {
 
@@ -40,21 +43,21 @@ module.exports = function(grunt) {
             // are no reliable grunt plugins
             // to manage angular dependencies,
             // and I do not want to manipulate
-            // naming to reflect this order
+            // naming to reflect order
 
             src:  [
                     'src/tpls/templates.js',
-                    'src/parser/parser.js',
-                    'src/parser/svcs/delimiters.svc.js',
-                    'src/parser/svcs/parser.svc.js',
-                    'src/header/header.js',
-                    'src/header/dirs/header.dir.js',
-                    'src/section/section.js',
-                    'src/section/dirs/code.dir.js',
-                    'src/section/dirs/display.dir.js',
-                    'src/section/dirs/section.dir.js',
-                    'src/section/dirs/table.dir.js',
-                    'src/section/dirs/text.dir.js',
+                    'src/peculiar/parser/parser.js',
+                    'src/peculiar/parser/svcs/delimiters.svc.js',
+                    'src/peculiar/parser/svcs/parser.svc.js',
+                    'src/peculiar/header/header.js',
+                    'src/peculiar/header/dirs/header.dir.js',
+                    'src/peculiar/section/section.js',
+                    'src/peculiar/section/dirs/code.dir.js',
+                    'src/peculiar/section/dirs/display.dir.js',
+                    'src/peculiar/section/dirs/section.dir.js',
+                    'src/peculiar/section/dirs/table.dir.js',
+                    'src/peculiar/section/dirs/text.dir.js',
                     'src/peculiar/peculiar.js'
                   ]
             ,
@@ -71,6 +74,49 @@ module.exports = function(grunt) {
           }
         },
 
+        karma: {
+          unit: {
+            options: {
+              basePath: '',
+              frameworks: ['jasmine'],
+              files: [
+
+                'bower_components/angular/angular.min.js',
+                'bower_components/angular-mocks/angular-mocks.js',
+                'bower_components/lodash/dist/lodash.min.js',
+
+                'src/peculiar/parser/parser.js',
+                'src/peculiar/parser/svcs/delimiters.svc.js',
+                'src/peculiar/parser/svcs/parser.svc.js',
+                'src/peculiar/header/header.js',
+                'src/peculiar/header/dirs/header.dir.js',
+                'src/peculiar/section/section.js',
+                'src/peculiar/section/dirs/code.dir.js',
+                'src/peculiar/section/dirs/display.dir.js',
+                'src/peculiar/section/dirs/section.dir.js',
+                'src/peculiar/section/dirs/table.dir.js',
+                'src/peculiar/section/dirs/text.dir.js',
+                'src/peculiar/peculiar.js',
+
+                'tests/**/*.js',
+
+                'src/peculiar/**/*.html'
+              ],
+              preprocessors: {
+                'src/peculiar/**/*.html': 'ng-html2js'
+              },
+              singleRun: true,
+              reporters: ['progress'],
+              browsers: ['PhantomJS']
+            }
+          }
+        },
+
+        jshint: {
+          beforeconcat: ['src/peculiar/**/*.js'],
+          afterconcat: ['build/peculiar.js']
+        },
+
         watch: {
           stylus: {
             files: ['src/styl/*.styl', 'src/peculiar/**/**/**/*.styl'],
@@ -85,10 +131,5 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('build', [
-      'stylus',
-      'html2js',
-      'concat',
-      'uglify'
-    ]);
+    grunt.registerTask('build', ['stylus', 'html2js', 'karma', 'jshint:beforeconcat', 'concat', 'jshint:afterconcat', 'uglify']);
 };
