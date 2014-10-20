@@ -1,8 +1,9 @@
 <div class="pu-section-block pu-section-table">
-  <div style="display:none;" data-ng-transclude></div>
+
   <table class="pu-table" data-ng-if="data">
     <tr class="pu-row" data-ng-repeat="row in data track by $index">
       <td class="pu-cell" data-ng-repeat="cell in row track by $index"> {{ cell }} </td>
     </tr>
   </table>
+  <div style="display:none;" data-ng-transclude></div>
 </div>

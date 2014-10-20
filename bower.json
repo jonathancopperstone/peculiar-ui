@@ -25,7 +25,8 @@
     "karma.conf.js",
     "gruntfile.js",
     "index.html",
-    "package.json"
+    "package.json",
+    "index.html"
   ],
   "devDependencies": {
     "angular": ">1.2.25",
