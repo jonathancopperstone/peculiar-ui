@@ -7,7 +7,7 @@ angular.module('peculiar.templates', []).run(['$templateCache', function($templa
     "");
   $templateCache.put("src/peculiar/section/tpls/display.tpl.html",
     "<div class=\"pu-section-block pu-section-display\">\n" +
-    "  <label class=\"pu-section-display-label\">{{ displayLabel }}</label>\n" +
+    "  <label data-ng-if=\"displayLabel\" class=\"pu-section-display-label\">{{ displayLabel }}</label>\n" +
     "  <div class=\"pu-section-display-window\" data-ng-transclude></div>\n" +
     "</div>\n" +
     "");
