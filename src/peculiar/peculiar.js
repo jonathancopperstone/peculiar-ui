@@ -6,6 +6,7 @@
     // Peculiar modules
 
     'peculiar.templates',
+    'peculiar.filter',
     'peculiar.parser',
     'peculiar.header',
     'peculiar.section',

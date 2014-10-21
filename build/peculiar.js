@@ -1,4 +1,21 @@
 angular.module('peculiar.templates', []).run(['$templateCache', function($templateCache) {
+  $templateCache.put("src/peculiar/filter/tpls/filter.tpl.html",
+    "<div class=\"pu-filter-toggle\">\n" +
+    "\n" +
+    "  <div class=\"pu-filter-toggle-button\"\n" +
+    "       data-ng-class=\"{'filter-toggle-selected': filterService.filterBy.product}\"\n" +
+    "       data-ng-click=\"filterService.setFilter('product')\">\n" +
+    "    <span>Product</span>\n" +
+    "  </div>\n" +
+    "\n" +
+    "  <div class=\"pu-filter-toggle-button\"\n" +
+    "       data-ng-class=\"{'filter-toggle-selected': filterService.filterBy.dev}\"\n" +
+    "       data-ng-click=\"filterService.setFilter('dev')\">\n" +
+    "    <span>Development</span>\n" +
+    "  </div>\n" +
+    "\n" +
+    "</div>\n" +
+    "");
   $templateCache.put("src/peculiar/header/tpls/header.tpl.html",
     "<div class=\"pu-header\" data-ng-transclude></div>\n" +
     "");
@@ -168,6 +185,81 @@ angular.module('peculiar.templates', []).run(['$templateCache', function($templa
         };
 
   }]);
+
+}());
+
+(function() {
+  'use strict';
+
+  angular.module('peculiar.filter', []);
+
+}());
+
+(function(){
+  'use strict';
+
+  angular.module('peculiar.filter').directive('puFilter', function() {
+    return {
+      restrict: 'E',
+      replace: true,
+      templateUrl: 'src/peculiar/filter/tpls/filter.tpl.html',
+      controller: 'peculiar.filter.filterController'
+    };
+  });
+
+}());
+
+(function() {
+  'use strict';
+
+  angular.module('peculiar.filter').controller('peculiar.filter.filterController', [
+    '$scope',
+    'peculiar.filter.filterService',
+    function($scope, filterService) {
+
+      $scope.filterService = filterService;
+
+    }
+  ]);
+
+}());
+
+(function() {
+  'use strict';
+
+  angular.module('peculiar.filter').factory('peculiar.filter.filterService', [
+    function() {
+
+      var filterBy = {
+        dev: true,
+        product: false
+      };
+
+      return {
+
+        // Bind object back,
+        // so you can just use
+        // this obj in the view
+
+        filterBy: filterBy,
+
+        // Set states accordingly
+
+        setFilter: function(filterType) {
+          if (filterType === 'dev') {
+            filterBy.dev = true;
+            filterBy.product = false;
+          }
+          else if (filterType === 'product') {
+            filterBy.product = true;
+            filterBy.dev = false;
+          }
+        }
+
+      };
+
+    }
+  ]);
 
 }());
 
@@ -349,6 +441,7 @@ angular.module('peculiar.templates', []).run(['$templateCache', function($templa
     // Peculiar modules
 
     'peculiar.templates',
+    'peculiar.filter',
     'peculiar.parser',
     'peculiar.header',
     'peculiar.section',
