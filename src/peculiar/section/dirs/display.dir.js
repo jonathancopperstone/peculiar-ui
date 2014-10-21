@@ -23,7 +23,7 @@
         // we can display a generic message
         // to indicate no preview is available
 
-        if (_.isEmpty(elem.text().trim())) {
+        if (_.isEmpty(elem.children(1).html().trim())) {
           elem.children(1).html('<span class="no-preview-available">No preview available.</span>');
         }
 
