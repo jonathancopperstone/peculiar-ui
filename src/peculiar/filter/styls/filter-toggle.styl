@@ -1,0 +1,41 @@
+.pu-filter-toggle {
+
+  width: 100%;
+  padding: 1px;
+  background: $grey-light-tint;
+  border: 1px solid $grey-medium;
+  border-radius: 4px;
+  display: flex;
+
+  .pu-filter-toggle-button {
+
+    width: 100%;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+    cursor: pointer;
+
+    font-size: 9px;
+    color: $grey-medium;
+    text-transform: uppercase;
+    @extend .type;
+
+    &:first-child {
+      border-radius: 4px 0 0 4px;
+    }
+
+    &:last-child {
+      border-radius: 0 4px 4px 0;
+    }
+
+    &.filter-toggle-selected {
+
+      background: $peculiar;
+      color: $peculiar-dark;
+    }
+
+  }
+}

@@ -1,0 +1,15 @@
+<div class="pu-filter-toggle">
+
+  <div class="pu-filter-toggle-button"
+       data-ng-class="{'filter-toggle-selected': filterService.filterBy.product}"
+       data-ng-click="filterService.setFilter('product')">
+    <span>Product</span>
+  </div>
+
+  <div class="pu-filter-toggle-button"
+       data-ng-class="{'filter-toggle-selected': filterService.filterBy.dev}"
+       data-ng-click="filterService.setFilter('dev')">
+    <span>Development</span>
+  </div>
+
+</div>

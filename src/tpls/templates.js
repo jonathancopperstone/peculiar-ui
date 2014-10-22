@@ -1,4 +1,21 @@
 angular.module('peculiar.templates', []).run(['$templateCache', function($templateCache) {
+  $templateCache.put("src/peculiar/filter/tpls/filter.tpl.html",
+    "<div class=\"pu-filter-toggle\">\n" +
+    "\n" +
+    "  <div class=\"pu-filter-toggle-button\"\n" +
+    "       data-ng-class=\"{'filter-toggle-selected': filterService.filterBy.product}\"\n" +
+    "       data-ng-click=\"filterService.setFilter('product')\">\n" +
+    "    <span>Product</span>\n" +
+    "  </div>\n" +
+    "\n" +
+    "  <div class=\"pu-filter-toggle-button\"\n" +
+    "       data-ng-class=\"{'filter-toggle-selected': filterService.filterBy.dev}\"\n" +
+    "       data-ng-click=\"filterService.setFilter('dev')\">\n" +
+    "    <span>Development</span>\n" +
+    "  </div>\n" +
+    "\n" +
+    "</div>\n" +
+    "");
   $templateCache.put("src/peculiar/header/tpls/header.tpl.html",
     "<div class=\"pu-header\" data-ng-transclude></div>\n" +
     "");
