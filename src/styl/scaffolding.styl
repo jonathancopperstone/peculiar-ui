@@ -1,6 +1,11 @@
-body {
+.pu-body {
 
-  background: $grey-light;
+  @extend .reset-body;
+
+  &.light-theme {
+
+    background: $grey-light;
+  }
 }
 
 .pu-wrap {
@@ -28,5 +33,12 @@ body {
     width: 500px;
     max-width: 500px;
     padding: 25px 15px 0 15px;
+  }
+
+  * {
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
   }
 }

@@ -1,11 +1,14 @@
 .pu-nav-block {
 
+  display: block;
   width: 100%;
   background: #fff;
   border-radius: 4px;
   border: 1px solid $grey-medium;
   border-top: 4px solid $peculiar;
   margin: 0 0 20px 0;
+
+  @extend .reset-list;
 
   /*
   Nav: First level
@@ -87,6 +90,7 @@
       > a {
 
         color: $type-secondary;
+        @extend .reset-a;
 
         &:hover {
 
