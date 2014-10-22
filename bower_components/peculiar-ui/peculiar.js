@@ -1,4 +1,21 @@
 angular.module('peculiar.templates', []).run(['$templateCache', function($templateCache) {
+  $templateCache.put("src/peculiar/filter/tpls/filter.tpl.html",
+    "<div class=\"pu-filter-toggle\">\n" +
+    "\n" +
+    "  <div class=\"pu-filter-toggle-button\"\n" +
+    "       data-ng-class=\"{'filter-toggle-selected': filterService.filterBy.product}\"\n" +
+    "       data-ng-click=\"filterService.setFilter('product')\">\n" +
+    "    <span>Product</span>\n" +
+    "  </div>\n" +
+    "\n" +
+    "  <div class=\"pu-filter-toggle-button\"\n" +
+    "       data-ng-class=\"{'filter-toggle-selected': filterService.filterBy.dev}\"\n" +
+    "       data-ng-click=\"filterService.setFilter('dev')\">\n" +
+    "    <span>Development</span>\n" +
+    "  </div>\n" +
+    "\n" +
+    "</div>\n" +
+    "");
   $templateCache.put("src/peculiar/header/tpls/header.tpl.html",
     "<div class=\"pu-header\" data-ng-transclude></div>\n" +
     "");
@@ -6,7 +23,10 @@ angular.module('peculiar.templates', []).run(['$templateCache', function($templa
     "<div class=\"pu-section-block pu-section-code\" data-ng-transclude></div>\n" +
     "");
   $templateCache.put("src/peculiar/section/tpls/display.tpl.html",
-    "<div class=\"pu-section-block pu-section-display\" data-ng-transclude></div>\n" +
+    "<div class=\"pu-section-block pu-section-display\">\n" +
+    "  <label data-ng-if=\"displayLabel\" class=\"pu-section-display-label\">{{ displayLabel }}</label>\n" +
+    "  <div class=\"pu-section-display-window\" data-ng-transclude></div>\n" +
+    "</div>\n" +
     "");
   $templateCache.put("src/peculiar/section/tpls/section.tpl.html",
     "<section class=\"pu-section\" data-ng-transclude>\n" +
@@ -14,12 +34,13 @@ angular.module('peculiar.templates', []).run(['$templateCache', function($templa
     "");
   $templateCache.put("src/peculiar/section/tpls/table.tpl.html",
     "<div class=\"pu-section-block pu-section-table\">\n" +
-    "  <div style=\"display:none;\" data-ng-transclude></div>\n" +
+    "\n" +
     "  <table class=\"pu-table\" data-ng-if=\"data\">\n" +
-    "    <tr class=\"pu-row\" data-ng-repeat=\"row in data\">\n" +
-    "      <td class=\"pu-cell\" data-ng-repeat=\"cell in row\"> {{ cell }} </td>\n" +
+    "    <tr class=\"pu-row\" data-ng-repeat=\"row in data track by $index\">\n" +
+    "      <td class=\"pu-cell\" data-ng-repeat=\"cell in row track by $index\"> {{ cell }} </td>\n" +
     "    </tr>\n" +
     "  </table>\n" +
+    "  <div style=\"display:none;\" data-ng-transclude></div>\n" +
     "</div>\n" +
     "");
   $templateCache.put("src/peculiar/section/tpls/text.tpl.html",
@@ -130,7 +151,7 @@ angular.module('peculiar.templates', []).run(['$templateCache', function($templa
               // following rows have the same
               // number of cells (add empty ones
               // if necessary)
-              
+
               else {
                 for (var i = 0; i < totalCellsInRow - cells.length; i++) {
                   cells.push('-');
@@ -164,6 +185,81 @@ angular.module('peculiar.templates', []).run(['$templateCache', function($templa
         };
 
   }]);
+
+}());
+
+(function() {
+  'use strict';
+
+  angular.module('peculiar.filter', []);
+
+}());
+
+(function(){
+  'use strict';
+
+  angular.module('peculiar.filter').directive('puFilter', function() {
+    return {
+      restrict: 'E',
+      replace: true,
+      templateUrl: 'src/peculiar/filter/tpls/filter.tpl.html',
+      controller: 'peculiar.filter.filterController'
+    };
+  });
+
+}());
+
+(function() {
+  'use strict';
+
+  angular.module('peculiar.filter').controller('peculiar.filter.filterController', [
+    '$scope',
+    'peculiar.filter.filterService',
+    function($scope, filterService) {
+
+      $scope.filterService = filterService;
+
+    }
+  ]);
+
+}());
+
+(function() {
+  'use strict';
+
+  angular.module('peculiar.filter').factory('peculiar.filter.filterService', [
+    function() {
+
+      var filterBy = {
+        dev: true,
+        product: false
+      };
+
+      return {
+
+        // Bind object back,
+        // so you can just use
+        // this obj in the view
+
+        filterBy: filterBy,
+
+        // Set states accordingly
+
+        setFilter: function(filterType) {
+          if (filterType === 'dev') {
+            filterBy.dev = true;
+            filterBy.product = false;
+          }
+          else if (filterType === 'product') {
+            filterBy.product = true;
+            filterBy.dev = false;
+          }
+        }
+
+      };
+
+    }
+  ]);
 
 }());
 
@@ -210,6 +306,19 @@ angular.module('peculiar.templates', []).run(['$templateCache', function($templa
 
 }());
 
+(function() {
+  'use strict';
+
+  angular.module('peculiar.section').factory('peculiar.section.messagingService', function() {
+      return {
+
+        noPreview: 'No preview available.'
+
+      };
+  });
+
+}());
+
 (function(){
   'use strict';
 
@@ -232,7 +341,28 @@ angular.module('peculiar.templates', []).run(['$templateCache', function($templa
       restrict: 'E',
       replace: true,
       transclude: true,
-      templateUrl: 'src/peculiar/section/tpls/display.tpl.html'
+      templateUrl: 'src/peculiar/section/tpls/display.tpl.html',
+      scope: {},
+      link: function(scope, elem, attrs) {
+
+        // Append a label element
+        // if defined
+
+        var displayLabel = angular.isDefined(attrs.label) ? attrs.label : false;
+
+        if (displayLabel) {
+          scope.displayLabel = displayLabel;
+        }
+
+        // If no content was provided, then
+        // we can display a generic message
+        // to indicate no preview is available
+
+        if (_.isEmpty(elem.children(1).html().trim())) {
+          elem.children(1).html('<span class="no-preview-available">No preview available.</span>');
+        }
+
+      }
     };
   });
 
@@ -311,6 +441,7 @@ angular.module('peculiar.templates', []).run(['$templateCache', function($templa
     // Peculiar modules
 
     'peculiar.templates',
+    'peculiar.filter',
     'peculiar.parser',
     'peculiar.header',
     'peculiar.section',
