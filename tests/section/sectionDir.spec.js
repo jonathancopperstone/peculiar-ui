@@ -7,6 +7,7 @@
 
     beforeEach(function() {
       module('src/peculiar/section/tpls/section.tpl.html');
+      module('peculiar.filter');
       module('peculiar.section');
     });
 

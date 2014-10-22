@@ -29,7 +29,9 @@ angular.module('peculiar.templates', []).run(['$templateCache', function($templa
     "</div>\n" +
     "");
   $templateCache.put("src/peculiar/section/tpls/section.tpl.html",
-    "<section class=\"pu-section\" data-ng-transclude>\n" +
+    "<section class=\"pu-section\"\n" +
+    "         data-ng-class=\"{'pu-filter-product': filterBy.product}\"\n" +
+    "         data-ng-transclude>\n" +
     "</section>\n" +
     "");
   $templateCache.put("src/peculiar/section/tpls/table.tpl.html",
