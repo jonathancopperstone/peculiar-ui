@@ -20,7 +20,7 @@ Documentation for internal use is usually a low priority, and involves quite a l
 This library is available as a `bower` package. With bower installed, run:
 
 ```shell
-bower install peculiar
+bower install peculiar-ui
 ```
 
 This library has a number of dependencies you'd also need to add when including the scripts in your markup.
@@ -28,8 +28,8 @@ This library has a number of dependencies you'd also need to add when including 
 For CSS, it requires the `peculiar-ui` styles, the default highlight-js theme (feel free to replace this with any other hightlight-js theme, however this was used to tie in with the peculiar style - pun not intended) and the Google Font used.
 
 ```html
-<link rel="stylesheet" href="bower_components/peculiar/build/peculiar-ui.css" />
-<link rel="stylesheet" href="bower_components/peculiar/build/highlightjs-googlecode.css" />
+<link rel="stylesheet" href="bower_components/peculiar-ui/build/peculiar-ui.css" />
+<link rel="stylesheet" href="bower_components/peculiar-ui/build/highlightjs-googlecode.css" />
 <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
 ```
 
@@ -40,7 +40,7 @@ The scripts required:
 <script src="bower_components/highlightjs/highlight.pack.js"></script>
 <script src="bower_components/angular-highlightjs/angular-highlightjs.min.js"></script>
 <script src="bower_components/lodash/dist/lodash.min.js"></script>
-<script src="bower_components/peculiar/build/peculiar.js"></script>
+<script src="bower_components/peculiar-ui/build/peculiar.js"></script>
 ```
 
 To load this tool into your page, you then need to add `peculiar` as a dependency of your angular app. If you don't have an angular app, then just create one:
