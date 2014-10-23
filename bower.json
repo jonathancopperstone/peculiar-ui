@@ -1,11 +1,11 @@
 {
   "name": "peculiar-ui",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "authors": [
     "Johnny Copperstone <jonnce@gmail.com>"
   ],
-  "main": ["build/peculiar.css", "build/peculiar.js"],
-  "description": "User Interface Documentation Library built using AngularJS.",
+  "main": ["build/peculiar.css", "build/peculiar.min.js"],
+  "description": "A (User Interface) Documentation Library built using AngularJS.",
   "keywords": [
     "ui",
     "user interface",
@@ -14,7 +14,11 @@
     "peculiar"
   ],
   "license": "MIT",
-  "homepage": "johnnycopperstone.github.io/peculiar.io",
+  "homepage": "johnnycopperstone.github.io/peculiar-ui",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/johnnycopperstone/peculiar-ui.git"
+  },
   "ignore": [
     "**/.*",
     "node_modules",

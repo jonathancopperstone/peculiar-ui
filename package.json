@@ -1,8 +1,8 @@
 {
   "name": "peculiar-ui",
-  "version": "0.0.0",
-  "description": "Documentation UI built with Angular",
-  "main": "index.js",
+  "version": "1.0.0",
+  "description": "A (User Interface) Documentation Library built using AngularJS.",
+  "main": ["build/peculiar.css", "build/peculiar.min.js"],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
