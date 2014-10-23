@@ -28,7 +28,7 @@
     "package.json",
     "index.html"
   ],
-  "devDependencies": {
+  "dependencies": {
     "angular": ">1.2.25",
     "angular-mocks": "*",
     "highlightjs": "8.0.0",
