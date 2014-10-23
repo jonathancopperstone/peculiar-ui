@@ -1,0 +1,55 @@
+{
+  "name": "peculiar-ui",
+  "version": "1.0.1",
+  "authors": [
+    "Johnny Copperstone <jonnce@gmail.com>"
+  ],
+  "main": [
+    "build/peculiar.css",
+    "build/peculiar.min.js"
+  ],
+  "description": "A (User Interface) Documentation Library built using AngularJS.",
+  "keywords": [
+    "ui",
+    "user interface",
+    "angular",
+    "documentation",
+    "peculiar"
+  ],
+  "license": "MIT",
+  "homepage": "johnnycopperstone.github.io/peculiar-ui",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/johnnycopperstone/peculiar-ui.git"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "docs",
+    "src",
+    "tests",
+    "karma.conf.js",
+    "gruntfile.js",
+    "index.html",
+    "package.json",
+    "index.html"
+  ],
+  "dependencies": {
+    "angular": ">1.2.25",
+    "angular-mocks": "*",
+    "highlightjs": "8.0.0",
+    "angular-highlightjs": "0.3.0",
+    "lodash": "2.4.1"
+  },
+  "_release": "1.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.1",
+    "commit": "24d4805b88bba9491471055d186ccd56d291ef9c"
+  },
+  "_source": "git://github.com/johnnycopperstone/peculiar-ui.git",
+  "_target": "~1.0.1",
+  "_originalSource": "peculiar-ui",
+  "_direct": true
+}

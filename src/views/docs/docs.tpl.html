@@ -1,15 +1,33 @@
 <div class="pu-wrap">
 
   <nav class="pu-nav">
+
     <ul class="pu-nav-block">
-
-      <li class="pu-nav-item-head">Docs-ception</li>
-      <li class="pu-nav-item"><a sref="docs.scaffolding">Scaffolding</a></li>
-      <li class="pu-nav-item"><a sref="docs.scaffolding">Navigation</a></li>
-      <li class="pu-nav-item"><a sref="docs.scaffolding">Header</a></li>
-      <li class="pu-nav-item"><a sref="docs.scaffolding">Sections</a></li>
-
+      <li class="pu-nav-item-head">Peculiar UI</li>
+      <li class="pu-nav-item" ui-sref-active="pu-nav-item-selected">
+        <a ui-sref="docs.getting-started">Getting Started</a>
+      </li>
+      <li class="pu-nav-item">
+        <a href="https://github.com/johnnycopperstone/peculiar-ui/tree/gh-pages">Example App</a>
+      </li>
     </ul>
+
+    <ul class="pu-nav-block">
+      <li class="pu-nav-item-head">Peculiar UI: Components</li>
+      <li class="pu-nav-item" ui-sref-active="pu-nav-item-selected">
+        <a ui-sref="docs.scaffolding">Scaffolding</a>
+      </li>
+      <li class="pu-nav-item" ui-sref-active="pu-nav-item-selected">
+        <a ui-sref="docs.scaffolding">Navigation</a>
+      </li>
+      <li class="pu-nav-item" ui-sref-active="pu-nav-item-selected">
+        <a ui-sref="docs.scaffolding">Header</a>
+      </li>
+      <li class="pu-nav-item" ui-sref-active="pu-nav-item-selected">
+        <a ui-sref="docs.scaffolding">Sections</a>
+      </li>
+    </ul>
+
   </nav>
 
   <div class="pu-content" ui-view>
