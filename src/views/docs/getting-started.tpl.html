@@ -8,4 +8,30 @@
     bower install peculiar-ui
   </pu-code>
 
+  <pu-text>
+    Then add the scripts and css on your page. If you install via bower, then they will be in the bower_components folder.
+  </pu-text>
+
+  <pu-code hljs>
+    <link rel="stylesheet" href="bower_components/peculiar-ui/build/peculiar-ui.css" />
+    <link rel="stylesheet" href="bower_components/peculiar-ui/build/highlightjs-googlecode.css" />
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+  </pu-code>
+
+  <pu-code hljs>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/highlightjs/highlight.pack.js"></script>
+    <script src="bower_components/angular-highlightjs/angular-highlightjs.min.js"></script>
+    <script src="bower_components/lodash/dist/lodash.min.js"></script>
+    <script src="bower_components/peculiar-ui/build/peculiar.js"></script>
+  </pu-code>
+
+  <pu-text>
+    Once you added all the necessary scripts and css on your page, you then need to add peculiar to your angular app. If you don't have one you can simply add pecular as your app on the DOM, otherwise add it as a dependency to your angular app.
+  </pu-text>
+
+  <pu-code hljs>
+    angular.module('your-app', ['peculiar']);
+  </pu-code>
+
 </pu-section>

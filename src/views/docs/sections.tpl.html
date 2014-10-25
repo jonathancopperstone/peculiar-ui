@@ -1,0 +1,149 @@
+<pu-section title="Section">
+
+  <pu-text>
+    This section directive is a wrapper for the rest of the section content types. A section can be defined with a `title`, which will automatically add in a pre-styled < h2 /> and round off the section. If no `title` is defined then it will only be displayed when you have content within it.
+  </pu-text>
+
+  <pu-text>
+    Options for `pu-section`:
+  </pu-text>
+
+  <pu-table>
+    purow: Attribute Name // Type // Defined Values // Description
+    purow: title // string // - // Title for the section
+  </pu-table>
+
+  <pu-display label="Section with a title">
+    <pu-section title="Section">
+    </pu-section>
+  </pu-display>
+
+  <pu-code hljs>
+    <pu-section title="Section">
+    </pu-section>
+  </pu-code>
+
+</pu-section>
+
+<pu-section title="Section: Text">
+
+  <pu-text>
+    This is simply a text block. It also has a paragraph parser, so any text delimited with a '> >' will wrapped in a < p />
+  </pu-text>
+
+  <pu-display label="Text with paragraphs">
+    <pu-section title="Section">
+      <pu-text>
+        >> Paragraph 1
+        >> Paragraph 2
+      </pu-text>
+    </pu-section>
+  </pu-display>
+
+  <pu-code hljs>
+    <pu-section title="Section">
+      <pu-text>
+        >> Paragraph 1
+        >> Paragraph 2
+      </pu-text>
+    </pu-section>
+  </pu-code>
+
+</pu-section>
+
+<pu-section title="Section: Display">
+
+  <pu-text>
+    The display directive is used to render out your UI element. No peculiar styles will be added to anything in here. You can add a label to this display block (similar to a figure on an image).
+  </pu-text>
+
+  <pu-table>
+    purow: Attribute Name // Type // Defined Values // Description
+    purow: label // string // - // Label for the displayed preview
+  </pu-table>
+
+  <pu-display>
+    <pu-section>
+      <pu-display>
+        <div class="classname">Your UI Element</div>
+      </pu-display>
+    </pu-section>
+  </pu-display>
+
+  <pu-code hljs>
+    <pu-section>
+      <pu-display>
+        <div class="classname">Your UI Element</div>
+      </pu-display>
+    </pu-section>
+  </pu-code>
+
+  <pu-text>
+    Each display can also have a label attached to it.
+  </pu-text>
+
+  <pu-display>
+    <pu-section>
+      <pu-display label="Display Label">
+        <div class="classname">Your UI Element</div>
+      </pu-display>
+    </pu-section>
+  </pu-display>
+
+  <pu-code hljs>
+    <pu-section>
+      <pu-display label="Display Label">
+        <div class="classname">Your UI Element</div>
+      </pu-display>
+    </pu-section>
+  </pu-code>
+
+  <pu-text>
+    If you would like to indicate there is no rendered display for a particular element (for example for wrapper components), use this tag with no content. It will show a 'No Preview Available' message.
+  </pu-text>
+
+  <pu-display></pu-display>
+
+  <pu-code hljs>
+    <pu-display></pu-display>
+  </pu-code>
+
+</pu-section>
+
+<pu-section title="Section: Code">
+  <pu-text>
+    This is used to show the associated code. Make sure you append `hljs` on the < pu-code /> element as an attribute otherwise it will render out the markup inside.
+  </pu-text>
+  <pu-display></pu-display>
+  <pu-code hljs>
+    <pu-code hljs>
+      // your code in here
+    </pu-code>
+  </pu-code>
+</pu-section>
+
+<pu-section title="Section: Table">
+
+  <pu-text>
+    >>This component is used to quickly create a table without having to actually use all the table elements which can get quite tedious if you've got a large table. It uses a parser to identify delimiters and create the table.
+    >>Start a table row with `purow:` and then separate each cell data with `//`.
+    >>The first row is reserved for the header row, and will indicate how many columns the table will have. If the rows after do not make up the header row's cell number, then it will automatically add empty cells to the end of it to keep it uniform. If you have 1 row only, then no table will be generated.
+  </pu-text>
+
+  <pu-display label="Table">
+    <pu-table>
+      purow: cell 1 // cell 2 // cell 3
+      purow: data 1 // data 2 // data 3
+      purow: data 1 // data 2
+    </pu-table>
+  </pu-display>
+
+  <pu-code hljs>
+    <pu-table>
+      purow: cell 1 // cell 2 // cell 3
+      purow: data 1 // data 2 // data 3
+      purow: data 1 // data 2
+    </pu-table>
+  </pu-code>
+
+</pu-section>

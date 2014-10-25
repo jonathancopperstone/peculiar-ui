@@ -1,6 +1,6 @@
 {
   "name": "peculiar-ui",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "authors": [
     "Johnny Copperstone <jonnce@gmail.com>"
   ],
@@ -42,14 +42,14 @@
     "angular-highlightjs": "0.3.0",
     "lodash": "2.4.1"
   },
-  "_release": "1.0.1",
+  "_release": "1.0.2",
   "_resolution": {
     "type": "version",
-    "tag": "v1.0.1",
-    "commit": "24d4805b88bba9491471055d186ccd56d291ef9c"
+    "tag": "v1.0.2",
+    "commit": "631377d898b7333140d4e72dc6bf4064fc2e15a6"
   },
   "_source": "git://github.com/johnnycopperstone/peculiar-ui.git",
-  "_target": "~1.0.1",
+  "_target": "~1.0.2",
   "_originalSource": "peculiar-ui",
   "_direct": true
 }

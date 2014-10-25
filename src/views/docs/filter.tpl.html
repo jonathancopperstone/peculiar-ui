@@ -1,0 +1,19 @@
+<pu-section title="Filter">
+
+  <pu-text>
+    >> This filter component is used to toggle between developer view or product view. This is useful when you want to strip out all the development related documentation, and just see a structured view of the user interface.
+    >> You can add this anywhere on your page, and all the other components will automatically react to the toggle.
+    >> You can only use one of these with your app however (not that I can think of a use case of needing more than one). Well, technically you can use as many as you want, but they will all inherit from the same angular service, which is a singleton, therefore the same value - as you can see on this page, both filters change.
+  </pu-text>
+
+  <pu-display label="Product/Development Filter">
+    <div style="width:250px">
+      <pu-filter></pu-filter>
+    </div>
+  </pu-display>
+
+  <pu-code hljs>
+    <pu-filter></pu-filter>
+  </pu-code>
+
+</pu-section>

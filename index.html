@@ -1,6 +1,8 @@
 <!DOCTYPE>
 <html ng-app="peculiar-docs">
 <head>
+
+  <base href="/">
   <title>Peculiar UI</title>
 
   <link rel="stylesheet" href="bower_components/peculiar-ui/build/peculiar.css" />
@@ -18,12 +20,12 @@
   <script src="dist/peculiar-docs.js"></script>
 
 </head>
-<body>
+<body class="pu-body light-theme">
 
   <nav>
     <ul>
-      <li><a ui-sref="home" class="peculiar-logo">peculiar<span>ui</span></a></li>
-      <li><a ui-sref="docs">Docs</a></li>
+      <li><a ui-sref-active="selected" ui-sref="home" class="peculiar-logo">peculiar<span>ui</span></a></li>
+      <li><a ui-sref-active="selected" ui-sref="docs">Docs</a></li>
       <li><a target="_blank" href="https://github.com/johnnycopperstone/peculiar-ui">Repo</a></li>
       <li><a target="_blank" href="https://github.com/johnnycopperstone/peculiar-ui/issues">Issues</a></li>
     </ul>
