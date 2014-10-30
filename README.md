@@ -3,6 +3,9 @@ peculiar-ui [![Build Status](https://travis-ci.org/johnnycopperstone/peculiar-ui
 
 A (User Interface) Documentation Library built using AngularJS.
 
+- [Homepage](http://johnnycopperstone.github.io/peculiar-ui/)
+- [Documentation](http://johnnycopperstone.github.io/peculiar-ui/#/docs)
+
 ##Why 'peculiar'?
 
 Naming is the worst. So to solve this problem, at the time of deciding what to name a project, I take the name of the song currently playing (my [soundcloud](https://soundcloud.com/johnny-copperstone/likes) is usually always on while I'm working). At the time, this was on:
