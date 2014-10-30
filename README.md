@@ -11,7 +11,7 @@ Naming is the worst. So to solve this problem, at the time of deciding what to n
 
 ##Why This Library?
 
-I'll be writing a blog post about this in the coming days, but the tl;dr version is I wanted a tool to quickly and easily document a user interface neatly, and not worry about the documentation site styles and the user interface styles interfering with each other.
+I'll be writing a [blog post](http://blog.johnnycopperstone.me/peculiar-ui/) about this in the coming days, but the tl;dr version is I wanted a tool to quickly and easily document a user interface neatly, and not worry about the documentation site styles and the user interface styles interfering with each other.
 
 Documentation for internal use is usually a low priority, and involves quite a lot of work. So this tool can greatly speed up the process, as well as being maintainable.
 
